@@ -4,6 +4,8 @@ Daily News Watchdog
 Liest bot_commands aus der DB und führt systemd-Befehle aus.
 """
 
+from __future__ import annotations
+
 import os
 import sys
 import time
