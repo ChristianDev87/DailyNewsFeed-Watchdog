@@ -61,6 +61,17 @@ def get_connection() -> mysql.connector.MySQLConnection:
     )
 
 
+def _mark_bot_offline(conn: mysql.connector.MySQLConnection) -> None:
+    try:
+        cursor = conn.cursor()
+        cursor.execute("UPDATE bot_status SET status = 'offline' WHERE id = 1")
+        conn.commit()
+        cursor.close()
+        log.info("Bot-Status auf offline gesetzt")
+    except Exception as exc:
+        log.warning(f"Fehler beim Setzen des Offline-Status: {exc}")
+
+
 def process_pending(conn: mysql.connector.MySQLConnection) -> None:
     cursor = conn.cursor(dictionary=True)
     cursor.execute(
@@ -93,6 +104,8 @@ def process_pending(conn: mysql.connector.MySQLConnection) -> None:
             if result.returncode == 0:
                 status = 'done'
                 log.info(f"'{command}' erfolgreich abgeschlossen (id={cmd_id})")
+                if command == 'stop_bot':
+                    _mark_bot_offline(conn)
             else:
                 status = 'failed'
                 log.error(
