@@ -20,6 +20,7 @@ Das Web-Interface schreibt Befehle in die `bot_commands`-Tabelle (Status: `pendi
 |---|---|
 | `restart_bot` | `systemctl restart daily-news-bot` |
 | `run_digest` | `systemctl restart daily-news-bot` |
+| `stop_bot` | `systemctl stop daily-news-bot` |
 
 ## Voraussetzungen
 
@@ -89,3 +90,7 @@ journalctl -u daily-news-watchdog -f
 - **Python 3.10+**
 - **mysql-connector-python** — Datenbankzugriff
 - **python-dotenv** — Konfiguration über `.env`
+
+## Geplant
+
+- **Docker** — alle drei Komponenten (Frontend, Bot, Watchdog) sollen in einem gemeinsamen Docker-Setup laufen (`docker-compose` mit internem Netzwerk, kein offener DB-Port nach außen)
