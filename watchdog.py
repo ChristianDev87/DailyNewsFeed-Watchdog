@@ -44,6 +44,7 @@ log = logging.getLogger('watchdog')
 COMMANDS: dict[str, list[str]] = {
     'restart_bot': ['systemctl', 'restart', 'daily-news-bot'],
     'run_digest':  ['systemctl', 'restart', 'daily-news-bot'],
+    'stop_bot':    ['systemctl', 'stop',    'daily-news-bot'],
 }
 
 POLL_INTERVAL = int(os.environ.get('WATCHDOG_INTERVAL', '10'))
