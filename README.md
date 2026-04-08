@@ -51,14 +51,14 @@ cp .env.example .env
 nano .env
 ```
 
-| Variable | Beschreibung | Standard |
-|---|---|---|
-| `DB_HOST` | Datenbank-Host | `localhost` |
-| `DB_PORT` | Datenbank-Port | `3306` |
-| `DB_NAME` | Datenbankname | `daily_news` |
-| `DB_USER` | Datenbankbenutzer | — |
-| `DB_PASS` | Datenbankpasswort | — |
-| `WATCHDOG_INTERVAL` | Polling-Intervall in Sekunden | `10` |
+| Variable | Pflicht | Beschreibung | Standard |
+|---|:---:|---|---|
+| `DB_USER` | ✅ | Datenbankbenutzer | — |
+| `DB_PASS` | ✅ | Datenbankpasswort | — |
+| `DB_HOST` | — | Datenbank-Host | `localhost` |
+| `DB_PORT` | — | Datenbank-Port | `3306` |
+| `DB_NAME` | — | Datenbankname | `daily_news` |
+| `WATCHDOG_INTERVAL` | — | Polling-Intervall in Sekunden | `10` |
 
 ### 4. Manuell testen
 
