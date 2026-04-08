@@ -1,5 +1,15 @@
 # DailyNewsFeed — Watchdog
 
+> Dieses Repository ist Teil des **DailyNewsFeed**-Systems — einer selbst gehosteten Discord-Nachrichtenplattform.
+
+| [🤖 Bot](https://github.com/ChristianDev87/DailyNewsFeed-Bot) | [🌐 Frontend](https://github.com/ChristianDev87/DailyNewsFeed-Frontend) | [🐍 Watchdog](https://github.com/ChristianDev87/DailyNewsFeed-Watchdog) |
+|:---:|:---:|:---:|
+| .NET 9 Discord Bot | PHP 8 Web-Interface | Python Watchdog |
+
+*Irgendwann sagt man Ja — entstanden aus den Wünschen guter Freunde.* 🙌
+
+---
+
 Python-Service der `bot_commands` aus der MySQL-Datenbank liest und systemd-Befehle ausführt. Bindeglied zwischen dem PHP Web-Interface und dem Discord Bot.
 
 ## Funktionsweise
